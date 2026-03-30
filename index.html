@@ -3,80 +3,648 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AWS Generative AI Developer Professional (AIP-C01) complete study guide. Build generative AI applications using Amazon Bedrock and foundation models. Pass with NestedCerts.">
-<title>AWS Generative AI Developer Professional Guide | AIP-C01 Exam Prep 2026</title>
-<link rel="preconnect" href="https://nestedcerts.com">
+<meta name="description" content="AWS Certified Generative AI Developer – Professional (AIP-C01) study guide with 30 free sample practice questions and detailed explanations. Prepare for your AWS exam with NestedCerts.">
+<title>AWS GenAI Developer Professional Study Guide | AIP-C01 Free Practice Questions 2026</title>
+<link rel="canonical" href="https://mrnimbus99.github.io/aws-genai-developer-guide/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif; background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 100%); color: #e8edf9; line-height: 1.7; }
 .container { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
-.hero { text-align: center; margin-bottom: 80px; animation: fadeInUp 0.8s ease; }
+.hero { text-align: center; margin-bottom: 60px; animation: fadeInUp 0.8s ease; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 .badge { display: inline-block; padding: 8px 16px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 100px; font-size: 0.85rem; font-weight: 600; color: #60a5fa; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em; }
-h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; background: linear-gradient(135deg, #60a5fa, #06b6d4, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em; }
-.lead { font-size: 1.25rem; color: #9ba3b8; max-width: 700px; margin: 0 auto 32px; line-height: 1.8; }
-.cta { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: linear-gradient(135deg, #3b82f6, #60a5fa); color: white; border-radius: 12px; font-weight: 700; text-decoration: none; margin: 16px 8px; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3); border: none; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; background: linear-gradient(135deg, #60a5fa, #06b6d4, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.lead { font-size: 1.15rem; color: #9ba3b8; max-width: 700px; margin: 0 auto 32px; line-height: 1.8; }
+.cta { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: linear-gradient(135deg, #3b82f6, #60a5fa); color: white; border-radius: 12px; font-weight: 700; text-decoration: none; margin: 12px 8px; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3); border: none; }
 .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5); }
-.section { background: rgba(21, 27, 43, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 48px; margin-bottom: 40px; backdrop-filter: blur(10px); transition: all 0.3s ease; }
-.section:hover { border-color: rgba(59, 130, 246, 0.3); transform: translateY(-2px); }
-h2 { font-size: 2rem; margin-bottom: 24px; color: #60a5fa; font-weight: 700; }
-p { color: #9ba3b8; margin-bottom: 16px; line-height: 1.8; font-size: 1.05rem; }
-a { color: #60a5fa; text-decoration: none; border-bottom: 1px solid rgba(96, 165, 250, 0.3); transition: all 0.2s ease; }
+.cta-secondary { background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: none; color: #60a5fa; }
+.section { background: rgba(21, 27, 43, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 40px; margin-bottom: 32px; backdrop-filter: blur(10px); }
+h2 { font-size: 1.8rem; margin-bottom: 20px; color: #60a5fa; font-weight: 700; }
+h3 { font-size: 1.2rem; margin-bottom: 12px; color: #c4ccdf; font-weight: 600; }
+p, li { color: #9ba3b8; line-height: 1.8; font-size: 1.02rem; }
+a { color: #60a5fa; text-decoration: none; border-bottom: 1px solid rgba(96, 165, 250, 0.3); }
 a:hover { color: #06b6d4; border-bottom-color: #06b6d4; }
-ul { margin: 24px 0; padding-left: 0; list-style: none; }
-li { margin-bottom: 16px; padding-left: 32px; position: relative; color: #9ba3b8; line-height: 1.7; }
-li::before { content: "✓"; position: absolute; left: 0; color: #10b981; font-weight: 700; font-size: 1.2rem; }
-.footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; color: #6b7280; font-size: 0.95rem; }
+.domains { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 20px 0; }
+.domain-tag { padding: 12px 16px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 10px; font-size: 0.95rem; color: #a5b4fc; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { margin-bottom: 14px; padding-left: 28px; position: relative; }
+.tips-list li::before { content: "💡"; position: absolute; left: 0; }
+.q-card { background: rgba(15, 20, 35, 0.8); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 28px; margin-bottom: 20px; }
+.q-num { font-size: 0.8rem; color: #6366f1; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.q-domain { font-size: 0.78rem; color: #8b5cf6; margin-bottom: 12px; }
+.q-text { color: #d1d5e8; font-size: 1.05rem; margin-bottom: 16px; font-weight: 500; line-height: 1.7; }
+.q-options { list-style: none; padding: 0; margin-bottom: 16px; }
+.q-options li { padding: 10px 14px; margin-bottom: 6px; border-radius: 8px; background: rgba(30, 40, 65, 0.6); border: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; color: #9ba3b8; }
+.q-options li.correct { background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.3); color: #6ee7b7; }
+.q-explain { background: rgba(99, 102, 241, 0.08); border-left: 3px solid #6366f1; padding: 16px 20px; border-radius: 0 10px 10px 0; margin-top: 12px; }
+.q-explain p { font-size: 0.92rem; color: #a5b4fc; white-space: pre-line; }
+details { cursor: pointer; }
+details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding: 8px 0; }
+.footer { margin-top: 60px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #6b7280; font-size: 0.9rem; }
 .footer a { margin: 0 12px; }
-@media (max-width: 768px) { .container { padding: 40px 20px; } h1 { font-size: 2.5rem; } .section { padding: 32px 24px; } }</style>
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 24px 0; }
+.stat { text-align: center; padding: 20px; background: rgba(59, 130, 246, 0.08); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.15); }
+.stat-num { font-size: 1.8rem; font-weight: 800; color: #60a5fa; }
+.stat-label { font-size: 0.85rem; color: #6b7280; margin-top: 4px; }
+@media (max-width: 768px) { .container { padding: 32px 16px; } .section { padding: 24px 18px; } .q-card { padding: 20px 16px; } }</style>
 </head>
 <body>
 <div class="container">
+
 <div class="hero">
 <div class="badge">Professional Level</div>
-<h1>AWS Generative AI Developer Professional (AIP-C01)</h1>
-<p class="lead">Build generative AI applications using Amazon Bedrock and foundation models.</p>
-<a href="https://nestedcerts.com/articles/genai-developer" class="cta">Start AIP-C01 Prep →</a>
+<h1>AWS Certified Generative AI Developer – Professional (AIP-C01)</h1>
+<p class="lead">Build, fine-tune, and deploy generative AI applications using Amazon Bedrock and foundation models.</p>
+<a href="https://nestedcerts.com/articles/generative-ai-developer-professional" class="cta">Start AIP-C01 Prep →</a>
+<a href="https://nestedcerts.com/certifications" class="cta cta-secondary">All 13 Certifications</a>
 </div>
 
 <div class="section">
-<h2>Why This Certification?</h2>
-<p>The <a href="https://nestedcerts.com/articles/genai-developer">AWS Generative AI Developer Professional</a> certification validates your expertise and opens doors to higher-paying roles. It demonstrates to employers that you have production-ready AWS skills.</p>
+<h2>Exam Domains</h2>
+<p>The AIP-C01 exam tests your knowledge across these domains. Each sample question below is tagged with its domain so you can see exactly what's covered.</p>
+<div class="domains"><div class="domain-tag">Generative AI Fundamentals</div><div class="domain-tag">Foundation Models</div><div class="domain-tag">Application Development</div><div class="domain-tag">Security and Governance</div></div>
 </div>
 
 <div class="section">
-<h2>Proven Study Strategy</h2>
-<p>Success requires hands-on practice and exam-realistic questions. <a href="https://nestedcerts.com">NestedCerts provides comprehensive practice tests</a> that match the actual AIP-C01 exam format and difficulty.</p>
-<p>Follow our <a href="https://nestedcerts.com/articles/30-day-path">structured 30-day study plan</a> for daily guidance and consistent progress.</p>
+<h2>Platform Stats</h2>
+<div class="stats">
+<div class="stat"><div class="stat-num">30</div><div class="stat-label">Practice Quizzes</div></div>
+<div class="stat"><div class="stat-num">2</div><div class="stat-label">Full Exams</div></div>
+<div class="stat"><div class="stat-num">730+</div><div class="stat-label">Total Questions</div></div>
+<div class="stat"><div class="stat-num">30</div><div class="stat-label">Day Study Plan</div></div>
+</div>
 </div>
 
 <div class="section">
-<h2>What You Get with NestedCerts</h2>
-<ul>
-<li>Practice questions matching AIP-C01 exam format</li>
-<li>Detailed explanations for every answer</li>
-<li>Performance analytics showing weak areas</li>
-<li>30-day structured study plan</li>
-<li>Full-length practice exams</li>
-<li>Mobile-friendly platform</li>
+<h2>Study Tips from Our Question Writers</h2>
+<p>These tips are based on patterns we see across our AIP-C01 question bank — the topics that trip people up most often:</p>
+<ul class="tips-list"><li>Amazon Bedrock is central — know model selection, inference parameters, and guardrails</li><li>Understand RAG (Retrieval Augmented Generation) architecture patterns deeply</li><li>Study prompt engineering techniques — few-shot, chain-of-thought, and system prompts</li><li>Know fine-tuning vs prompt engineering vs RAG — when to use each approach</li><li>Learn responsible AI guardrails — content filtering, PII detection, and model evaluation</li></ul>
+</div>
+
+<div class="section">
+<h2>30 Free Sample Questions</h2>
+<p>Below are 30 real practice questions from <a href="https://nestedcerts.com">NestedCerts</a> — one from each of our 30 quizzes for AIP-C01. Each includes the full explanation showing why every answer is correct or incorrect. This is exactly the quality and depth you get across all 730+ questions on the platform.</p>
+</div>
+
+<div class="q-card">
+<div class="q-num">Quiz 1 — Sample Question</div>
+<div class="q-domain">Domain 1: Foundation Model Integration, Data Management, and Compliance (31%)</div>
+<div class="q-text">A company needs to design a GenAI customer support chatbot that handles 10,000 requests per day with sub-second response times. Traffic varies significantly, peaking during business hours. Which architectural approach best meets these requirements?</div>
+<ul class="q-options"><li class="correct">✓ Use Amazon Bedrock with on-demand inference and Lambda for orchestration. Cache frequent queries in ElastiCache to reduce latency and cost.</li>
+<li>Deploy a fine-tuned model on a SageMaker real-time endpoint with a single ml.g5.2xlarge instance behind API Gateway.</li>
+<li>Use Amazon Bedrock with Provisioned Throughput and ECS Fargate services for orchestration, with DynamoDB for response caching.</li>
+<li>Use Amazon Bedrock batch inference with S3 input/output and CloudFront for response delivery.</li>
 </ul>
-<a href="https://nestedcerts.com" class="cta">Start Free Practice →</a>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why A is correct: On-demand Bedrock inference scales automatically with variable request volumes without capacity planning. Lambda provides cost-effective event-driven orchestration. ElastiCache reduces latency and cost by serving cached responses for frequently repeated customer queries, which are common in support scenarios.
+- Why B is wrong: A single SageMaker ml.g5.2xlarge instance has fixed capacity and cannot handle traffic spikes without auto-scaling configuration. Managing SageMaker endpoints adds operational overhead compared to Bedrock's fully managed inference.
+- Why C is wrong: Provisioned Throughput guarantees dedicated capacity but is cost-inefficient for a workload averaging 10,000 requests/day with variable peaks. The ongoing hourly cost exceeds on-demand pricing at moderate volumes. ECS Fargate adds container management overhead unnecessary for this use case.
+- Why D is wrong: Bedrock batch inference (CreateModelInvocationJob) processes requests asynchronously via S3, making it unsuitable for sub-second interactive customer support responses.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 2 — Sample Question</div>
+<div class="q-domain">Domain 1: Foundation Model Integration, Data Management, and Compliance (31%)</div>
+<div class="q-text">A company deploys multiple foundation models across development, staging, and production environments on Amazon Bedrock. The team must ensure that model configurations—including model IDs, inference parameters, and endpoint URLs—remain consistent and auditable across all environments. Which THREE practices should the team implement? (Select THREE)</div>
+<ul class="q-options"><li class="correct">✓ Store model configurations in AWS AppConfig with environment-specific deployment strategies for centralized management and gradual rollouts.</li>
+<li class="correct">✓ Define model access permissions and endpoint infrastructure using AWS CloudFormation templates to maintain consistency across environments.</li>
+<li class="correct">✓ Maintain model configuration files in a version control repository such as AWS CodeCommit to provide change history and rollback capability.</li>
+<li>Embed model IDs and inference parameters directly in application source code to reduce external dependencies.</li>
+<li>Maintain separate, manually updated configuration spreadsheets for each environment to allow environment-specific tuning.</li>
+<li>Allow each development team to independently define their own model configurations without a centralized standard.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why A is correct: AWS AppConfig provides centralized, dynamic configuration management with environment-specific deployment strategies and gradual rollouts. It allows teams to update model configurations at runtime without redeploying applications, which is critical for managing model IDs, inference parameters, and endpoint URLs across environments.
+- Why B is correct: AWS CloudFormation templates define model access permissions and endpoint infrastructure as code, ensuring environments are provisioned identically every time. This eliminates configuration drift between dev, staging, and production.
+- Why C is correct: Version control (e.g., CodeCommit) provides a complete change history with diffs, author attribution, and the ability to roll back to any previous configuration state. This auditability is essential for tracking why configurations changed and who approved the changes.
+- Why D is wrong: Embedding model IDs and inference parameters directly in source code means every configuration change requires a code change, code review, build, and deployment cycle. This creates tight coupling, slows updates, and makes it impossible to update configurations independently across environments.
+- Why E is wrong: Manually updated spreadsheets lack version control, access controls, and automation. They quickly become inconsistent across environments and cannot be programmatically consumed by deployment pipelines, leading to manual errors and configuration drift.
+- Why F is wrong: Allowing teams to independently define configurations without a centralized standard leads to inconsistency, duplication, and conflicting settings. When multiple teams use the same models, uncoordinated configurations can cause unexpected behavior and make debugging difficult.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 3 — Sample Question</div>
+<div class="q-domain">Domain 1: Foundation Model Integration, Data Management, and Compliance (31%)</div>
+<div class="q-text">A media company ingests 500,000 customer reviews daily into an FM-based sentiment analysis pipeline. Full validation of every record with AWS Glue Data Quality is exceeding budget. The data contains reviews from five product categories with significantly different quality profiles. Which sampling strategy balances validation cost and data quality coverage?</div>
+<ul class="q-options"><li>Use random sampling at 10% across all records, validate with Glue Data Quality, and apply results uniformly to the full dataset.</li>
+<li class="correct">✓ Implement stratified sampling in a Lambda function to select representative records from each product category. Validate samples with Glue Data Quality rules and publish per-category pass rates to CloudWatch for monitoring.</li>
+<li>Reduce Glue Data Quality rule complexity to lower per-record cost, then continue validating every record.</li>
+<li>Sample only the largest product category since it represents the majority of records, and skip validation for smaller categories.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why correct: Stratified sampling ensures representative coverage across all product categories, so quality issues specific to any one category are detected. Glue Data Quality validates samples efficiently with automated rules. Publishing per-category pass rates to CloudWatch allows the team to monitor trends and detect category-specific drift. This approach balances cost (validating a subset) with coverage (all categories represented).
+- Why A is wrong: Random sampling at a flat percentage may over-represent large categories and miss quality issues in smaller categories entirely. Applying results uniformly ignores that quality profiles differ by category.
+- Why C is wrong: Reducing rule complexity means weaker validation checks — it saves cost per record but may miss real quality problems. The goal is to reduce the number of validated records, not the thoroughness of validation.
+- Why D is wrong: Sampling only the largest category leaves smaller categories completely unvalidated. Quality issues in minority categories would go undetected, potentially degrading FM output for those segments.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 4 — Sample Question</div>
+<div class="q-domain">Domain 1: Foundation Model Integration, Data Management, and Compliance (31%)</div>
+<div class="q-text">A financial services company runs a RAG application backed by an Amazon OpenSearch Service vector store containing 50 million embeddings generated from regulatory documents. The company needs a disaster recovery strategy that minimizes both data loss and recovery time. Which TWO backup strategies should the solutions architect implement? (Select TWO)</div>
+<ul class="q-options"><li>Export all vectors to Amazon S3 as JSON files nightly using a custom Lambda function and reimport them during recovery.</li>
+<li>Replicate the OpenSearch domain to a secondary AWS Region using AWS Database Migration Service (DMS).</li>
+<li>Store only the source documents in Amazon S3 with versioning enabled and regenerate all embeddings from scratch during recovery.</li>
+<li class="correct">✓ Configure automated OpenSearch Service snapshots to Amazon S3 for point-in-time recovery of the cluster state.</li>
+<li>Create an Aurora PostgreSQL read replica with pgvector in another Availability Zone to serve as a standby vector store.</li>
+<li class="correct">✓ Back up the original source documents and the embedding generation pipeline configuration so the vector store can be fully reconstructed if snapshots are unavailable.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why D is correct: OpenSearch Service automated snapshots capture the full cluster state including index mappings, vector data, and metadata to Amazon S3. They are incremental and enable fast point-in-time recovery without regenerating embeddings, which minimizes recovery time.
+- Why F is correct: Backing up source documents alongside the embedding pipeline code and configuration (model ID, chunking parameters, metadata schema) provides a defense-in-depth reconstruction path if snapshots are corrupted or unavailable.
+- Why A is wrong: Exporting 50 million vectors as JSON nightly is extremely slow and storage-intensive. Native OpenSearch snapshots are incremental and far more efficient for backup and restore.
+- Why B is wrong: AWS DMS does not support OpenSearch Service as a replication source for vector data. Cross-region replication for OpenSearch uses its own cross-cluster replication feature.
+- Why C is wrong: Storing only source documents means regenerating 50 million embeddings during recovery, which could take many hours and incur significant Bedrock inference costs, violating the requirement to minimize recovery time.
+- Why E is wrong: Aurora PostgreSQL with pgvector is a different vector store engine entirely. You cannot create a read replica of an OpenSearch domain in Aurora as they are separate services with different data formats.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 5 — Sample Question</div>
+<div class="q-domain">Domain 1: Foundation Model Integration, Data Management, and Compliance (31%)</div>
+<div class="q-text">A company is building a RAG application using Amazon Bedrock Knowledge Bases. The document corpus includes lengthy technical manuals with nested sections, subsections, and code examples. Users report that retrieved context often includes incomplete procedures or mixes content from unrelated sections. Which chunking strategy should the developer implement to improve retrieval quality?</div>
+<ul class="q-options"><li>Configure fixed-size chunking with 300-token chunks and no overlap to maximize the number of distinct searchable chunks.</li>
+<li class="correct">✓ Configure hierarchical chunking in Bedrock Knowledge Bases to split documents based on heading levels and section structure, preserving parent-child chunk relationships.</li>
+<li>Use a single large chunk per document to ensure all context is captured, and rely on the FM's context window to process the full document.</li>
+<li>Configure fixed-size chunking with 1000-token chunks and 200-token overlap, treating each manual as flat text regardless of document structure.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why B is correct: Hierarchical chunking in Amazon Bedrock Knowledge Bases splits documents based on content structure (headings, sections) and preserves parent-child relationships between chunks. This ensures procedures remain intact and sections stay coherent, which directly addresses the problem of incomplete procedures and mixed content from unrelated sections.
+- Why A is wrong: Fixed-size chunking at 300 tokens with no overlap splits documents at arbitrary token boundaries regardless of content structure. This would cut procedures mid-step and lose context at boundaries, making the existing problem worse.
+- Why C is wrong: Using entire documents as single chunks would exceed typical FM context windows for lengthy technical manuals, reduce retrieval precision (the entire manual is returned for any query), and significantly increase token costs.
+- Why D is wrong: Fixed-size chunking at 1000 tokens ignores document structure, so chunk boundaries would still split sections arbitrarily. While the 200-token overlap helps with boundary context, it does not solve the core problem of mixing content from unrelated sections.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 6 — Sample Question</div>
+<div class="q-domain">Domain 1: Foundation Model Integration, Data Management, and Compliance (31%)</div>
+<div class="q-text">A financial services company deploys an Amazon Bedrock application that generates personalized investment summaries for thousands of clients. Each summary must include client-specific data such as portfolio value, risk tolerance, and account type. The team needs a scalable, maintainable approach to prompt construction. Which approach BEST meets these requirements?</div>
+<ul class="q-options"><li class="correct">✓ Create parameterized prompt templates with placeholders in Amazon Bedrock Prompt Management. Store client data in DynamoDB. Use Lambda to retrieve templates, substitute variables, and validate the final prompt before invoking the model.</li>
+<li>Store a separate, fully written prompt for each client in S3. Use Lambda to retrieve the appropriate prompt by client ID and send it directly to Amazon Bedrock.</li>
+<li>Embed prompt templates as string constants in the application code. Use environment variables to inject client-specific values at deployment time.</li>
+<li>Use Amazon Bedrock Prompt Flows to dynamically generate a unique prompt per request using an initial FM call, then pass the generated prompt to a second FM call for the summary.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why A is correct: Amazon Bedrock Prompt Management supports parameterized templates with placeholders (e.g., {{portfolio_value}}) that enable reuse across thousands of clients without duplicating prompts. Lambda handles runtime variable substitution and validation, ensuring each prompt is well-formed before model invocation. DynamoDB provides scalable, low-latency client data retrieval.
+- Why B is wrong: Storing a fully written prompt per client creates massive duplication. Any change to the prompt structure requires updating thousands of individual S3 objects, making maintenance impractical and error-prone.
+- Why C is wrong: Embedding templates in application code ties prompt changes to code deployments. This prevents prompt engineers from iterating on prompts without redeployment and violates separation of concerns.
+- Why D is wrong: Using an FM call to generate another prompt adds unnecessary latency, cost, and unpredictability. The first FM call could produce inconsistent or malformed prompts, reducing reliability.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 7 — Sample Question</div>
+<div class="q-domain">Domain 1: Foundation Model Integration, Data Management, and Compliance (31%)</div>
+<div class="q-text">A financial services company is building a RAG-based GenAI application that must meet strict regulatory requirements for auditability, content safety, network isolation, and data encryption. The team wants to minimize operational overhead while satisfying all compliance controls. Which architecture meets these requirements?</div>
+<ul class="q-options"><li>Deploy a self-managed RAG pipeline on Amazon EC2 with a custom vector database. Implement application-level content filtering. Store audit logs in Amazon S3.</li>
+<li>Use Amazon Bedrock Knowledge Bases with a public endpoint. Rely on IAM policies for content safety. Use Amazon CloudWatch for the audit trail.</li>
+<li>Use Amazon SageMaker AI endpoints for RAG with Amazon OpenSearch Service. Implement Amazon Bedrock Guardrails for safety. Expose internet-facing endpoints with TLS encryption.</li>
+<li class="correct">✓ Use Amazon Bedrock Knowledge Bases for managed RAG. Apply Amazon Bedrock Guardrails for content safety. Enable AWS CloudTrail for audit logging. Configure VPC endpoints for private access. Encrypt data with AWS KMS.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why D is correct: Amazon Bedrock Knowledge Bases provides a fully managed RAG pipeline (ingestion, chunking, embedding, retrieval). Guardrails enforces content-safety policies at the model layer. CloudTrail provides an immutable audit trail of every API call, satisfying regulatory auditability. VPC endpoints keep traffic off the public internet, meeting network isolation requirements. KMS encryption protects data at rest. This combination addresses functionality, safety, auditability, network isolation, and encryption in a single managed architecture.
+- Why A is wrong: Running a self-managed RAG stack on EC2 with a custom vector database is operationally heavier and does not provide built-in content safety like Guardrails. Application-level filtering is fragile and not equivalent to Guardrails' policy enforcement. S3 access logs are not a substitute for CloudTrail's API-level audit trail for compliance.
+- Why B is wrong: Using a public endpoint for Bedrock means traffic traverses the public internet, violating network isolation requirements for regulated workloads. IAM policies control access but do not perform content filtering like Guardrails. CloudWatch is for metrics and alarms, not a compliance audit trail.
+- Why C is wrong: SageMaker endpoints for RAG require custom orchestration code and lack the managed ingestion/chunking pipeline of Knowledge Bases. Internet-facing endpoints, even with TLS, do not meet the private connectivity requirements of regulated industries.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 8 — Sample Question</div>
+<div class="q-domain">Domain 2: Implementation and Integration (26%)</div>
+<div class="q-text">A company uses three specialized foundation models hosted on Amazon Bedrock: one fine-tuned for code generation, one for natural language summarization, and one for structured data extraction. User requests can require any combination of these capabilities. The team needs a system that analyzes each request, routes subtasks to the appropriate model, and merges partial outputs into a unified response. Which approach BEST meets these requirements?</div>
+<ul class="q-options"><li>Deploy a single Amazon Bedrock agent with a system prompt that instructs the model to switch personas based on the request type. Store persona mappings in a DynamoDB table and retrieve the appropriate persona at invocation time.</li>
+<li>Use Amazon API Gateway to round-robin requests across the three model endpoints. Implement a Lambda function that concatenates the responses from all three models for every request.</li>
+<li class="correct">✓ Create an orchestrator using AWS Agent Squad with a SupervisorAgent that classifies each incoming request, routes subtasks to the appropriate specialist agent, and applies custom aggregation logic to combine results before returning a unified response.</li>
+<li>Deploy all three models as Amazon SageMaker endpoints behind an Application Load Balancer with weighted target groups to distribute traffic proportionally across the models.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why correct (C): AWS Agent Squad uses intelligent classification to analyze each incoming request and route it to the most appropriate specialist agent based on context and content. A SupervisorAgent can coordinate specialist agents in parallel, combine partial results through custom aggregation logic, and maintain conversation context across interactions. This directly addresses the need to route heterogeneous tasks to domain experts and merge outputs into a unified response.
+- Why A is wrong: A single Bedrock agent with persona switching keeps all reasoning in one model. A single FM cannot be fine-tuned for code generation, NLP summarization, AND structured data extraction simultaneously with equal quality. The task requires leveraging specialized models, not one generalist model pretending to be three.
+- Why B is wrong: Round-robin distribution ignores request content entirely. Sending a code generation request to the summarization model produces poor results. Additionally, concatenating outputs from all three models for every request wastes compute and produces incoherent responses when only one capability is needed.
+- Why D is wrong: Weighted target groups on an ALB distribute traffic based on predefined ratios, not request content. This approach cannot dynamically analyze what type of task a request requires and route it to the correct specialist model.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 9 — Sample Question</div>
+<div class="q-domain">Domain 2: Implementation and Integration (26%)</div>
+<div class="q-text">A startup is building a customer-facing chatbot that experiences unpredictable traffic with long idle periods between bursts. The team wants to minimize costs during idle periods while maintaining acceptable response times during peak usage. The application uses an Amazon Bedrock foundation model. Which deployment approach BEST meets these requirements?</div>
+<ul class="q-options"><li>Deploy a SageMaker real-time endpoint with a minimum instance count of 2 and auto-scaling for high availability.</li>
+<li class="correct">✓ Use AWS Lambda to invoke the Amazon Bedrock API on demand, with Amazon API Gateway for request management and throttling.</li>
+<li>Purchase Bedrock Provisioned Throughput to guarantee consistent response times across all traffic levels.</li>
+<li>Deploy the model on an Amazon ECS cluster with GPU instances and an Application Load Balancer for request distribution.</li>
+<li>Use SageMaker serverless inference endpoints to scale to zero during idle periods and handle bursts automatically.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why B is correct: Lambda with Bedrock on-demand is ideal for unpredictable, bursty traffic with idle periods. Lambda scales to zero when idle (no cost) and scales automatically during bursts. API Gateway provides throttling and request management. This is the standard pattern for event-driven GenAI workloads with variable traffic.
+- Why A is wrong: SageMaker real-time endpoints require at least one running instance at all times, incurring costs even during long idle periods. This makes it expensive for workloads with unpredictable traffic and extended idle periods.
+- Why C is wrong: Bedrock Provisioned Throughput requires committing to a fixed capacity level and paying continuously (hourly billing), which is cost-inefficient for unpredictable workloads with long idle periods. It is designed for steady, high-volume workloads.
+- Why D is wrong: ECS with GPU instances requires maintaining always-on infrastructure, resulting in high costs during idle periods. Managing GPU scheduling, container orchestration, and scaling adds operational complexity without benefit for this traffic pattern.
+- Why E is wrong: SageMaker serverless inference does not support GPU instances and has a maximum memory of 6 GB. It experiences cold start latency when scaling from zero, which may degrade user experience for a customer-facing chatbot.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 10 — Sample Question</div>
+<div class="q-domain">Domain 2: Implementation and Integration (26%)</div>
+<div class="q-text">A financial services company is deploying a GenAI-powered document analysis application. Development teams frequently push configuration changes that work in development but cause failures in production due to environment-specific differences in VPC settings, IAM roles, and Bedrock model endpoints. Which approach BEST ensures consistent and safe multi-environment deployment?</div>
+<ul class="q-options"><li class="correct">✓ Use AWS CDK to define infrastructure as code with environment-specific context variables. Deploy identical stacks to dev, staging, and prod accounts using CDK Pipelines with manual approval gates before production promotion.</li>
+<li>Create separate CloudFormation templates for each environment to allow maximum flexibility. Use CodePipeline to deploy each template independently, with teams managing their own environment configurations in parameter files stored in S3.</li>
+<li>Use AWS Elastic Beanstalk to manage environment configurations. Create saved configurations for each stage and use Beanstalk's managed updates to promote changes through environments sequentially.</li>
+<li>Use AWS AppConfig to store all configuration including infrastructure definitions. Deploy changes through AppConfig's staged rollout feature with automatic rollback based on CloudWatch alarms for each environment.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why A is correct: AWS CDK with environment-specific context variables ensures infrastructure is defined once and deployed consistently across all stages, while allowing controlled variation (different VPC CIDRs, IAM role ARNs, Bedrock model IDs per environment). CDK Pipelines provides a built-in multi-stage CI/CD construct with automated deployments through stages and manual approval gates before production, directly addressing the problem of inconsistent promotions.
+- Why B is wrong: Separate CloudFormation templates per environment defeats the purpose of infrastructure consistency. The templates themselves can drift independently, and teams managing their own parameter files reintroduces the original problem of environment-specific configuration errors causing production incidents.
+- Why C is wrong: Elastic Beanstalk is designed for web application deployment, not for managing complex GenAI infrastructure involving VPC endpoints, IAM roles for Bedrock access, and Lambda functions. It lacks the granular infrastructure control needed for this architecture.
+- Why D is wrong: AppConfig is designed for application-level feature flags and runtime configuration, not infrastructure definitions. It cannot manage VPC settings, IAM roles, or service provisioning. While useful for toggling features at runtime, it does not solve the infrastructure consistency problem described in the scenario.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 11 — Sample Question</div>
+<div class="q-domain">Domain 2: Implementation and Integration (26%)</div>
+<div class="q-text">A financial services company runs a generative AI chatbot on Amazon Bedrock in us-east-1. The chatbot supports customer-facing interactions that require 99.9% availability. The company needs an automated failover strategy in case Bedrock becomes unavailable in the primary region. Which approach provides the MOST resilient failover?</div>
+<ul class="q-options"><li class="correct">✓ Deploy the application in two regions. Use Amazon Route 53 failover routing with health checks that monitor the Bedrock endpoint. Use AWS Lambda to detect API failures and update health check status. Store conversation state in Amazon DynamoDB global tables for cross-region consistency.</li>
+<li>Deploy the application in two regions. Use an Application Load Balancer with cross-region target groups to distribute traffic between regions. Store conversation state in Amazon ElastiCache Global Datastore. Switch DNS records manually during outages.</li>
+<li>Deploy the application in a single region across multiple Availability Zones. Use an Application Load Balancer to distribute requests across Lambda functions in different AZs. Enable DynamoDB point-in-time recovery for state durability.</li>
+<li>Deploy the application in two regions. Use Amazon CloudFront with origin failover to automatically route requests to the backup region. Store conversation state in Amazon S3 with cross-region replication.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why A is correct: Route 53 failover routing with health checks provides automated DNS-level failover. Lambda-based health checks can proactively detect Bedrock API failures such as throttling, errors, or elevated latency. DynamoDB global tables provide active-active multi-region state replication with single-digit millisecond latency, enabling seamless conversation continuity after failover without data loss.
+- Why B is wrong: Application Load Balancer does not support cross-region target groups natively — ALB operates within a single region. Manual DNS switching defeats the purpose of automated failover and increases recovery time, violating the 99.9% availability requirement.
+- Why C is wrong: Multi-AZ within a single region does not protect against a regional Bedrock service outage. If Bedrock is unavailable in us-east-1, all Availability Zones in that region are affected equally. This provides compute resilience but not FM API resilience.
+- Why D is wrong: CloudFront origin failover is designed to detect HTTP error codes (5xx) from origins and switch to a secondary origin. It cannot detect Bedrock API-level failures like throttling or model unavailability, which may still return HTTP 200 with error payloads. S3 cross-region replication has eventual consistency, making it unsuitable for real-time conversation state.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 12 — Sample Question</div>
+<div class="q-domain">Domain 2: Implementation and Integration (26%)</div>
+<div class="q-text">A fintech company is building a customer-facing chatbot powered by Amazon Bedrock. Users report long wait times because the entire FM response must be generated before it appears on screen. The team needs to display partial responses as they are generated to reduce perceived latency. Which approach should the team implement?</div>
+<ul class="q-options"><li>Configure an API Gateway REST API with Lambda proxy integration. Increase the API Gateway timeout to 29 seconds and the Lambda timeout to 15 minutes. Return the complete response to the client when generation finishes.</li>
+<li class="correct">✓ Configure an API Gateway WebSocket API with a Lambda function that calls the Bedrock InvokeModelWithResponseStream API. Send each response chunk to the client through the WebSocket connection as it is received.</li>
+<li>Configure an API Gateway HTTP API with Lambda proxy integration. Enable chunked transfer encoding on the API Gateway response and invoke the Bedrock InvokeModel API with the Transfer-Encoding: chunked header.</li>
+<li>Configure Amazon CloudFront in front of the API Gateway REST API. Enable CloudFront streaming distribution to automatically convert the synchronous Bedrock response into a streamed response for the client.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why B is correct: API Gateway WebSocket APIs maintain a persistent, bidirectional connection between client and server. The Lambda function can invoke Bedrock's InvokeModelWithResponseStream API and push each response chunk to the client through the WebSocket connection as it arrives, providing true real-time streaming that reduces perceived latency.
+- Why A is wrong: Increasing timeouts does not solve the streaming problem. The user still waits for the entire response to be generated before seeing anything. API Gateway REST APIs have a maximum integration timeout of 29 seconds, and this approach delivers the response as a single payload, not incrementally.
+- Why C is wrong: API Gateway HTTP APIs do not natively support chunked transfer encoding for streaming Lambda responses in this manner. Chunked transfer encoding is a transport-level mechanism, not a way to enable real-time token-by-token streaming of FM outputs through API Gateway.
+- Why D is wrong: CloudFront streaming distributions are designed for media streaming (video/audio via RTMP), not for streaming text responses from an API. CloudFront cannot transform a synchronous API response into a streamed token-by-token response.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 13 — Sample Question</div>
+<div class="q-domain">Domain 2: Implementation and Integration (26%)</div>
+<div class="q-text">A fintech company is building a multi-agent system using Strands Agents where a compliance agent, a risk-scoring agent, and a customer-response agent must share loan application state. Agents sometimes process the same application concurrently, and the team needs to prevent state conflicts while keeping read latency under 50 milliseconds. Which approach BEST addresses these requirements?</div>
+<ul class="q-options"><li>Store agent state in Amazon S3 with versioning enabled. Use S3 event notifications to trigger Lambda functions that notify other agents of state changes. Implement S3 Object Lock to prevent concurrent modifications.</li>
+<li class="correct">✓ Use Amazon DynamoDB with conditional writes and optimistic locking via version attributes. Coordinate agent communication through Amazon EventBridge. Use DynamoDB Streams with Lambda to propagate state changes to dependent agents.</li>
+<li>Deploy Amazon ElastiCache for Redis as a shared state store with Redis transactions. Use Redis Pub/Sub for inter-agent messaging. Implement distributed locks using Redis SETNX for concurrency control.</li>
+<li>Store state in Amazon Aurora PostgreSQL with row-level locking. Use database triggers to send notifications through Amazon SNS when state changes. Implement pessimistic locking for all agent read operations.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why B is correct: DynamoDB with conditional writes and version attributes provides optimistic concurrency control that handles concurrent agent access efficiently while maintaining single-digit millisecond read latency at scale. EventBridge enables loosely coupled, event-driven communication between agents without direct dependencies. DynamoDB Streams with Lambda allows reactive state propagation to dependent agents. This aligns with AWS best practices for serverless multi-agent architectures and Skill 2.1.1's guidance on memory and state management.
+- Why A is wrong: S3 is designed for object storage, not low-latency state management. S3 Object Lock is intended for WORM (write-once-read-many) compliance retention, not application-level concurrency control between agents. S3 GET latency (typically 100-200ms for small objects) may exceed the 50ms requirement under load.
+- Why C is wrong: ElastiCache Redis provides low latency but requires managing cluster infrastructure and lacks the same durability guarantees as DynamoDB. Redis Pub/Sub messages are fire-and-forget with no persistence. For a fintech application requiring auditability and durability of loan application state, this trade-off is unfavorable.
+- Why D is wrong: Aurora PostgreSQL with pessimistic locking (locking on every read) creates significant contention when multiple agents process the same application concurrently, increasing latency and reducing throughput. Pessimistic locking is overly restrictive for this use case where conflicts are occasional, not constant.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 14 — Sample Question</div>
+<div class="q-domain">Domain 3: AI Safety, Security, and Governance (20%)</div>
+<div class="q-text">A company is launching a customer-facing generative AI chatbot on Amazon Bedrock with Guardrails for content filtering and Lambda for custom moderation. The security team must validate the safety controls before production deployment. Which adversarial testing approach provides the most comprehensive validation?</div>
+<ul class="q-options"><li>Execute a curated set of known harmful prompts and verify that Guardrails blocks each one before reaching the model.</li>
+<li>Run Amazon Bedrock model evaluation jobs to assess the foundation model's built-in safety alignment and rely on the model's native refusal behavior.</li>
+<li>Deploy to a staging environment, have internal testers attempt manual bypass for two weeks, and document any successful evasions for remediation.</li>
+<li class="correct">✓ Build a test suite covering prompt injection, jailbreak techniques, and edge-case inputs. Test the Guardrails and Lambda layers independently while tracking both detection rates and false positive rates to iterate on filter thresholds.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why D is correct: Comprehensive adversarial testing requires systematically testing multiple attack vectors — prompt injection, jailbreak techniques, and boundary-case inputs — against each safety layer independently. Tracking both detection rates and false positive rates ensures controls are effective without degrading user experience. This aligns with Skill 3.1.5's automated adversarial testing workflows.
+- Why A is wrong: Testing only a curated set of known harmful prompts misses novel attack patterns. A static test list provides limited coverage against evolving adversarial techniques and does not test the custom Lambda moderation layer.
+- Why B is wrong: Model evaluation jobs assess the foundation model's general capabilities and alignment, not the custom safety controls (Guardrails + Lambda) built around it. The application-specific safety boundary requires explicit testing.
+- Why C is wrong: Manual testing by internal testers lacks systematic coverage, cannot scale, and may miss sophisticated attack techniques that require specialized security expertise. Two weeks of ad-hoc testing does not substitute for automated test suites.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 15 — Sample Question</div>
+<div class="q-domain">Domain 3: AI Safety, Security, and Governance (20%)</div>
+<div class="q-text">A healthcare company is building a patient inquiry chatbot using Amazon Bedrock. Regulations require that PII in user messages is detected and protected before reaching the foundation model and that no PII appears in model responses. Which approach provides the most comprehensive PII protection?</div>
+<ul class="q-options"><li class="correct">✓ Use Amazon Comprehend to detect PII in user inputs, apply tokenization through a Lambda function to replace detected PII with tokens before sending to Bedrock, store the token mapping in an encrypted DynamoDB table, and configure Bedrock Guardrails sensitive information filters to mask any PII in model outputs.</li>
+<li>Configure Bedrock Guardrails sensitive information filters on outputs only, and add a system prompt instructing the model not to repeat any PII from user inputs.</li>
+<li>Use Amazon Macie to scan user inputs in real time for PII before each Bedrock invocation, and store flagged messages in a quarantine S3 bucket for manual review before processing.</li>
+<li>Encrypt all user inputs with AWS KMS before sending them to Bedrock, so the model processes encrypted text and cannot expose the underlying PII in its responses.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why A is correct: This provides defense-in-depth. Amazon Comprehend detects PII on the input side, Lambda tokenizes it before the data reaches Bedrock, and Guardrails sensitive information filters provide a second safety layer on outputs. The encrypted DynamoDB token mapping allows de-tokenization later if needed while keeping PII out of the model interaction.
+- Why B is wrong: System prompts are not enforceable security controls—models can still include PII in responses despite instructions. Without input-side protection, raw PII is sent directly to the model, which violates the requirement to protect data before it reaches the FM.
+- Why C is wrong: Amazon Macie is designed for asynchronous sensitive data discovery in Amazon S3 buckets, not real-time scanning of API request payloads. It cannot intercept and scan individual chat messages before Bedrock invocation.
+- Why D is wrong: Encrypting inputs before sending them to Bedrock would make the text unintelligible to the model—it needs plaintext to generate meaningful responses. KMS encryption protects data at rest and in transit, but it is not a PII masking or anonymization technique.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 16 — Sample Question</div>
+<div class="q-domain">Domain 3: AI Safety, Security, and Governance (20%)</div>
+<div class="q-text">A financial services company deploys an Amazon Bedrock foundation model for loan recommendation explanations. Regulators require model transparency documentation that updates automatically when the model is retrained. Which approach best meets this requirement?</div>
+<ul class="q-options"><li>Create a static PDF document describing the model and store it in S3 with versioning enabled.</li>
+<li>Maintain a wiki page that the development team updates manually after each model retraining cycle.</li>
+<li class="correct">✓ Use SageMaker AI Model Cards to programmatically generate and update documentation including model purpose, training data details, performance metrics, ethical considerations, and intended use constraints.</li>
+<li>Use Amazon Bedrock model evaluation job results as the sole model documentation artifact.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why C is correct: SageMaker AI Model Cards provide a programmatic framework for creating structured model documentation that can be automatically updated during retraining pipelines. They capture model purpose, training details, performance metrics, ethical considerations, and intended use constraints — meeting regulatory transparency requirements through structured, versioned, and auditable documentation.
+- Why A is wrong: Static PDFs cannot be programmatically updated through ML pipelines and lack structured metadata for automated compliance checks. Manual PDF generation is error-prone and creates documentation drift.
+- Why B is wrong: Manual wiki updates are not auditable, not integrated with ML pipelines for automatic updates, and prone to staleness when teams forget to update after retraining cycles.
+- Why D is wrong: Evaluation results capture only model performance metrics — they do not document model purpose, intended use constraints, training data provenance, or ethical considerations, all of which regulators require for transparency.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 17 — Sample Question</div>
+<div class="q-domain">Domain 3: AI Safety, Security, and Governance (20%)</div>
+<div class="q-text">A healthcare company uses Amazon Bedrock to summarize patient intake forms. During internal testing, the team discovers that summaries for patients with non-English names sometimes omit key medical history details. The team needs a systematic approach to evaluate and remediate this bias. Which approach BEST addresses this requirement?</div>
+<ul class="q-options"><li>Configure Amazon Bedrock Guardrails to block any summaries that contain non-English names to avoid biased outputs entirely.</li>
+<li>Increase the model temperature parameter to generate more diverse outputs, reducing the likelihood of biased patterns.</li>
+<li class="correct">✓ Use Amazon Bedrock with an LLM-as-a-judge solution to evaluate summaries across demographic groups, define fairness metrics in CloudWatch to track bias scores over time, and use Bedrock Prompt Management to systematically test revised prompts that mitigate the identified bias.</li>
+<li>Retrain the foundation model on a balanced dataset of English and non-English patient names to eliminate the bias at the model level.</li>
+<li>Add a disclaimer to all generated summaries stating that the AI system may produce biased outputs and that users should verify the information.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why C is correct: This approach addresses the full fairness evaluation lifecycle. The LLM-as-a-judge solution provides automated, scalable evaluation of outputs across demographic groups, identifying where bias occurs. CloudWatch fairness metrics enable ongoing quantitative tracking so the team can measure whether bias improves or regresses over time. Bedrock Prompt Management allows systematic A/B testing of different prompt strategies to find versions that produce equitable summaries. Together, these three components form a detect-measure-remediate loop.
+- Why A is wrong: Blocking summaries containing non-English names does not fix the bias — it removes service for those patients entirely, creating a worse fairness outcome. Guardrails are designed for content policy enforcement (e.g., blocking harmful content), not for addressing quality disparities across demographic groups.
+- Why B is wrong: Temperature controls randomness in generation, not fairness. Increasing temperature would make outputs more varied but would not systematically address the pattern of omitting medical details for certain name types.
+- Why D is wrong: Foundation model retraining is not available to customers using Amazon Bedrock managed models. Even with fine-tuning, this skips the critical step of first measuring and defining the bias.
+- Why E is wrong: Disclaimers do not remediate the underlying bias. While transparency about limitations has value, it shifts the burden to end users and does not fulfill the requirement to actively evaluate and address fairness issues.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 18 — Sample Question</div>
+<div class="q-domain">Domain 3: AI Safety, Security, and Governance (20%)</div>
+<div class="q-text">A company stores Amazon Bedrock FM interaction logs containing customer queries and model responses. Regulations require that logs be retained for one year, archived to lower-cost storage after 90 days, encrypted at rest, and automatically deleted after the retention period. Auditors must be able to verify that deletions occurred on schedule. Which approach meets these requirements with the LEAST operational overhead?</div>
+<ul class="q-options"><li>Store interaction logs in Amazon DynamoDB with TTL set to one year. Use DynamoDB Streams to trigger a Lambda function that archives expired items to S3 Glacier before deletion.</li>
+<li>Store interaction logs in Amazon S3 Standard. Retain all data indefinitely and have an administrator manually review and delete logs that exceed the one-year retention period.</li>
+<li>Use Amazon Macie to scan interaction logs stored in S3 and automatically move logs containing PII to a separate archive bucket after 90 days. Configure bucket expiration for the archive bucket.</li>
+<li class="correct">✓ Store interaction logs in Amazon S3 with S3 Lifecycle policies that transition objects to S3 Glacier after 90 days and permanently delete objects after one year. Enable server-side encryption with AWS KMS. Enable CloudTrail data events to log all object deletions for audit verification.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why D is correct: Amazon S3 Lifecycle configurations automate the transition of FM interaction logs through retention stages (e.g., Standard to Glacier after 90 days, deletion after 1 year), ensuring policy-driven retention without manual intervention. KMS encryption protects data at rest throughout all lifecycle stages. CloudTrail logs all deletion events, providing the audit trail regulators require. This approach aligns with Skill 3.2.2, which specifies S3 Lifecycle configurations for data retention policies and encryption for privacy protection.
+- Why A is wrong: Storing interaction logs in DynamoDB with TTL handles deletion but does not address encrypted archival. DynamoDB TTL deletes items — it does not transition them to lower-cost archival storage. For long-term regulatory retention where data must be preserved but rarely accessed, S3 Lifecycle with Glacier transitions is the standard approach.
+- Why B is wrong: Retaining all data indefinitely in S3 Standard violates data minimization principles required by most privacy regulations (GDPR, HIPAA). Without lifecycle policies, storage costs grow unbounded, and the company cannot demonstrate a defined retention and deletion policy to auditors.
+- Why C is wrong: Amazon Macie discovers sensitive data in S3 buckets but does not manage data retention lifecycles. Macie identifies PII exposure risks, which is valuable for data classification, but the question specifically asks about enforcing retention policies with automated archival and deletion — a function that S3 Lifecycle configurations are purpose-built for.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 19 — Sample Question</div>
+<div class="q-domain">Domain 4: Operational Efficiency and Optimization (12%)</div>
+<div class="q-text">A SaaS company offers a GenAI-powered assistant with free and premium tiers using Amazon Bedrock. The free tier handles 80% of total requests but generates only 20% of revenue. Monthly FM costs are growing rapidly. The team wants to reduce costs while ensuring premium users receive higher-quality responses. Which approach BEST optimizes costs while maintaining service differentiation?</div>
+<ul class="q-options"><li>Use Amazon Bedrock Provisioned Throughput for all tiers and apply API Gateway throttling to limit free-tier request rates, reducing overall invocation volume without changing model selection.</li>
+<li>Deploy a single high-capability model such as Claude Sonnet for all requests and use IAM policies to restrict the number of daily API calls free-tier users can make.</li>
+<li class="correct">✓ Implement a Lambda-based router that directs free-tier requests to a smaller, cost-effective model such as Claude Haiku and premium-tier requests to a more capable model such as Claude Sonnet, with routing rules and per-tier usage tracked in DynamoDB.</li>
+<li>Cache all FM responses in ElastiCache and serve only cached responses to free-tier users regardless of their query, reserving live model invocations exclusively for premium users.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why C is correct: This implements a cost-capability tradeoff by routing free-tier requests to a smaller, cheaper model (e.g., Claude Haiku at ~10x lower cost per token than larger models) while reserving the more capable model for paying premium users. Lambda provides automated, scalable routing logic and DynamoDB tracks per-tier usage for cost attribution and quota enforcement. This directly aligns cost with revenue contribution.
+- Why A is wrong: Provisioned Throughput with throttling controls request volume but still uses the same expensive model for all tiers. Throttling degrades free-tier experience without reducing per-request cost. The core issue is model cost per request, not capacity pricing.
+- Why B is wrong: Using a single high-capability model for all requests means every free-tier request incurs premium model costs. IAM-based daily call limits reduce volume but do not reduce per-request cost, and the 80% of traffic from free-tier users still hits the expensive model.
+- Why D is wrong: Serving only cached responses to free-tier users regardless of their query would return irrelevant answers for novel questions, making the free tier functionally useless. This destroys user experience and would not work for the variety of questions users ask.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 20 — Sample Question</div>
+<div class="q-domain">Domain 4: Operational Efficiency and Optimization (12%)</div>
+<div class="q-text">A company runs a GenAI application where AWS Lambda functions invoke Amazon Bedrock through the public internet, causing variable latency between 150 ms and 400 ms. All resources are deployed in a single AWS Region, and the application serves internal users only within that Region. The team needs to reduce and stabilize invocation latency.
+
+Which approach should the team implement?</div>
+<ul class="q-options"><li>Configure Amazon CloudFront with Amazon Bedrock as the origin to cache model responses and reduce latency for repeated prompts.</li>
+<li class="correct">✓ Create a VPC endpoint for Amazon Bedrock to keep traffic on the AWS private network, eliminating public internet routing variability.</li>
+<li>Deploy the application across multiple Regions with Amazon Route 53 latency-based routing to distribute Bedrock invocations globally.</li>
+<li>Increase the Lambda function timeout to 900 seconds and add retry logic with exponential backoff to handle latency spikes gracefully.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why B is correct: A VPC endpoint for Amazon Bedrock routes traffic over the AWS private network instead of the public internet, eliminating internet routing variability and reducing latency. Since all resources and users are in a single Region, same-Region private connectivity is the most direct optimization.
+- Why A is wrong: Amazon CloudFront is designed for caching and accelerating content delivery to distributed end users. Bedrock model invocations are dynamic API calls that cannot be meaningfully cached at a CDN layer, and the users are internal to the same Region.
+- Why C is wrong: Multi-Region deployment with Route 53 adds architectural complexity and cross-Region data transfer costs. Since all users are in a single Region, distributing traffic globally provides no latency benefit and introduces unnecessary overhead.
+- Why D is wrong: Increasing the Lambda timeout and adding retry logic only accommodates latency spikes rather than reducing them. This treats the symptom (timeouts) without addressing the root cause (public internet routing variability).</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 21 — Sample Question</div>
+<div class="q-domain">Domain 4: Operational Efficiency and Optimization (12%)</div>
+<div class="q-text">A company runs a multi-step GenAI application using Lambda, Amazon Bedrock, and OpenSearch Serverless. Users report intermittent latency spikes, but the operations team cannot determine which component causes the delays. The team needs end-to-end visibility across all components with minimal operational overhead. Which approach provides the MOST comprehensive observability?</div>
+<ul class="q-options"><li>Enable Amazon Bedrock Model Invocation Logging to capture all prompts and completions in CloudWatch Logs, then query them with CloudWatch Logs Insights when users report issues.</li>
+<li class="correct">✓ Instrument the application with AWS X-Ray to trace requests across Lambda and Bedrock API calls. Publish custom CloudWatch metrics for token usage and response quality. Correlate traces, metrics, and logs in a unified CloudWatch dashboard.</li>
+<li>Set up CloudWatch alarms on Lambda duration and Bedrock ModelLatency metrics, and use SNS to notify the team when static thresholds are breached.</li>
+<li>Deploy a scheduled Lambda function that queries CloudWatch metrics every 10 minutes and writes a summary report to an S3 bucket for the team to review.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why B is correct: Holistic observability requires the three pillars — metrics, logs, and traces — correlated together. X-Ray distributed tracing shows exactly which component (Lambda, Bedrock, or OpenSearch) introduces latency on each request. Custom CloudWatch metrics for token usage and response quality add GenAI-specific dimensions. A unified dashboard correlating all three data sources gives the team a single pane of glass for rapid root-cause analysis. This matches Skill 4.3.1 (holistic observability with operational metrics, performance tracing, and custom dashboards).
+- Why A is wrong: Model Invocation Logging captures prompts and completions for analysis, but it provides only logs — no distributed tracing across components, no real-time metrics, and no way to pinpoint which component causes latency spikes. It is a reactive investigation tool, not a comprehensive observability solution.
+- Why C is wrong: Static threshold alarms on individual metrics detect known failure modes but do not provide end-to-end request tracing. The team still cannot determine which component causes the delay — they only know that overall latency exceeded a threshold. This addresses alerting but not observability.
+- Why D is wrong: A scheduled Lambda polling metrics every 10 minutes introduces significant detection delay and produces only summary reports. It lacks real-time visibility, distributed tracing, and the ability to drill into individual requests. This is a batch reporting approach, not an observability system.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 22 — Sample Question</div>
+<div class="q-domain">Domain 4: Operational Efficiency and Optimization (12%)</div>
+<div class="q-text">A media company uses Amazon Bedrock to summarize news articles. They currently use Anthropic Claude 3 Sonnet for all summarization tasks, including both brief 50-word headline summaries and detailed 500-word article analyses. The team wants to reduce FM invocation costs by at least 40% without degrading quality for the detailed analyses. Which approach should they implement?</div>
+<ul class="q-options"><li>Replace Claude 3 Sonnet with Claude 3 Haiku for all summarization tasks to minimize per-token costs uniformly across both summary types.</li>
+<li class="correct">✓ Implement a query complexity router that directs brief headline summaries to Claude 3 Haiku and detailed analyses to Claude 3 Sonnet based on the requested summary type.</li>
+<li>Reduce the max_tokens parameter to 100 for all requests to limit response length and lower output token costs across the board.</li>
+<li>Switch to a self-hosted open-source model on Amazon SageMaker to eliminate Bedrock per-token charges entirely.</li>
+<li>Cache all generated summaries in Amazon ElastiCache and only invoke the FM when an article has not been previously summarized.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why correct (B): A tiered model selection framework routes simple tasks (headline summaries) to a cheaper, smaller model (Haiku) while preserving the more capable model (Sonnet) for complex analyses. Haiku costs significantly less per token than Sonnet, so if headline summaries represent a large share of traffic, routing them to Haiku easily achieves 40%+ cost savings without any quality loss on the detailed analyses. This directly implements the cost-capability tradeoff evaluation described in Skill 4.1.2.
+- Why A is wrong: Using Haiku for ALL tasks would degrade quality on the detailed 500-word analyses. The requirement explicitly states quality must be maintained for complex analyses. A blanket downgrade saves money but violates the quality constraint.
+- Why C is wrong: Setting max_tokens to 100 for all requests would truncate the 500-word detailed analyses, breaking that feature entirely. This is a blunt cost-cutting measure that ignores the different requirements of each task type.
+- Why D is wrong: Migrating to SageMaker introduces significant operational overhead (instance management, scaling, patching, model hosting) and does not guarantee equivalent quality. The cost savings from eliminating per-token charges may be offset by EC2/GPU instance costs, especially at variable traffic volumes.
+- Why E is wrong: News articles are largely unique content — each article is summarized once. The cache hit rate would be very low for new articles, so caching alone would not achieve the 40% cost reduction target. Caching is more effective when queries are repetitive.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 23 — Sample Question</div>
+<div class="q-domain">Domain 5: Testing, Validation, and Troubleshooting (11%)</div>
+<div class="q-text">A company is using Amazon Bedrock to power a customer support chatbot and is evaluating three foundation models (Anthropic Claude, Amazon Titan, and Meta Llama) to find the optimal cost-performance balance. The team needs a systematic approach to compare these models. Which THREE actions should the team take to evaluate cost-performance tradeoffs effectively? (Select THREE)</div>
+<ul class="q-options"><li class="correct">✓ Run each model against the same evaluation dataset and measure output quality scores using Amazon Bedrock Model Evaluations.</li>
+<li>Select the model with the lowest per-token price regardless of output quality.</li>
+<li class="correct">✓ Track input and output token counts and calculate cost per request for each model across representative workloads.</li>
+<li>Use the largest available model to maximize quality without considering cost.</li>
+<li class="correct">✓ Plot quality scores against cost per request to identify configurations on the efficient frontier.</li>
+<li>Evaluate models only during off-peak hours to reduce evaluation costs.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why A is correct: Running each model against the same standardized evaluation dataset using Amazon Bedrock Model Evaluations ensures a fair, apples-to-apples quality comparison. Automatic evaluation provides metrics like accuracy, robustness, and toxicity for each model under identical conditions.
+- Why C is correct: Tracking token counts and computing cost per request across representative workloads gives the team concrete cost data. Different models have different pricing per input/output token, and actual token usage varies by model, so real-world cost measurement is essential.
+- Why E is correct: Plotting quality scores against cost per request creates a cost-quality efficient frontier, allowing the team to identify which models deliver the best quality at each price point and make an informed tradeoff decision rather than guessing.
+- Why B is wrong: Selecting the cheapest model without considering output quality ignores the core purpose of cost-performance analysis. A low-cost model that produces poor-quality responses would increase downstream costs (escalations to human agents, customer churn).
+- Why D is wrong: Always choosing the largest model ignores cost efficiency entirely. A smaller model may deliver acceptable quality at a fraction of the cost for this use case.
+- Why F is wrong: The time of day does not affect Bedrock model evaluation costs or results. Bedrock pricing is based on token usage, not time-of-day demand. This does not contribute to cost-performance analysis.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 24 — Sample Question</div>
+<div class="q-domain">Domain 5: Testing, Validation, and Troubleshooting (11%)</div>
+<div class="q-text">A development team's GenAI application intermittently returns HTTP 429 ThrottlingException errors from the Amazon Bedrock InvokeModel API during peak usage periods. IAM permissions have been verified as correct. Which troubleshooting action should the team take FIRST?</div>
+<ul class="q-options"><li>Switch to a different foundation model that has higher default throughput quotas</li>
+<li>Deploy the application across multiple AWS Regions and use Route 53 to distribute Bedrock API requests</li>
+<li class="correct">✓ Review Amazon CloudWatch metrics for Bedrock throttling events, check current service quota usage against account limits, and request a quota increase if the throttle threshold is being reached</li>
+<li>Implement aggressive client-side response caching to eliminate repeated API calls entirely</li>
+<li>Increase the Lambda function memory allocation to handle higher concurrency</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why C is correct: When troubleshooting HTTP 429 ThrottlingException errors, the first step is understanding the scope of throttling. CloudWatch metrics for the AWS/Bedrock namespace (including invocation error and throttling metrics) show how frequently throttling occurs and whether it correlates with account-level quota limits. Checking Service Quotas in the AWS console confirms whether the account's requests-per-minute or tokens-per-minute limits are being hit. If confirmed, requesting a quota increase directly addresses the root cause.
+- Why A is wrong: Switching models is a significant application change that may affect output quality and behavior. It doesn't address the root cause — the current model may just need a higher quota.
+- Why B is wrong: Multi-Region deployment adds substantial architectural complexity and cost. Bedrock quotas are per-Region, so this distributes load, but it's not the appropriate first troubleshooting step when a simple quota increase may resolve the issue.
+- Why D is wrong: Not all GenAI requests are cacheable (unique user queries produce unique outputs). Caching also risks serving stale or incorrect responses and doesn't address the underlying quota limitation.
+- Why E is wrong: Lambda memory allocation affects compute performance within a function execution, not Bedrock API throttle limits. The 429 error comes from the Bedrock service, not from Lambda resource constraints.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 25 — Sample Question</div>
+<div class="q-domain">Domain 5: Testing, Validation, and Troubleshooting (11%)</div>
+<div class="q-text">A machine learning team is building an evaluation framework for their Amazon Bedrock-powered customer support chatbot. They need to assess foundation model output quality beyond traditional ML metrics like accuracy and F1 score. Which three evaluation dimensions should the team prioritize for comprehensive response quality assessment? (Select THREE)</div>
+<ul class="q-options"><li>Measure BLEU scores exclusively, since they are the industry standard metric for evaluating all generative AI output quality.</li>
+<li class="correct">✓ Evaluate factual accuracy by cross-referencing chatbot responses against the company's verified knowledge base documents.</li>
+<li class="correct">✓ Assess response fluency and coherence by checking that outputs are grammatically correct, well-structured, and natural sounding.</li>
+<li>Use perplexity as the sole metric, since lower perplexity always indicates higher response quality for end users.</li>
+<li class="correct">✓ Measure response relevance by scoring how directly each answer addresses the specific customer question that was asked.</li>
+<li>Track model training loss curves as the primary indicator of production response quality.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why B is correct: Factual accuracy evaluation ensures the chatbot provides information consistent with the company's knowledge base. For customer support, incorrect information erodes trust. This goes beyond traditional ML metrics by assessing the truthfulness of generated content — a core dimension in GenAI evaluation frameworks (Skill 5.1.1).
+- Why C is correct: Fluency assessment evaluates whether responses read naturally and are well-structured. Poorly constructed responses reduce user confidence even if the underlying information is correct. Fluency is a key GenAI-specific quality dimension not captured by traditional classification metrics.
+- Why E is correct: Relevance scoring measures whether the response actually addresses the customer's question rather than providing tangentially related information. Foundation models can generate fluent, factually correct text that still fails to answer the question asked, making relevance a critical evaluation dimension.
+- Why A is wrong: BLEU scores measure n-gram overlap with reference texts and were designed for machine translation. They do not effectively capture semantic quality, factual accuracy, or relevance in open-ended generative tasks like customer support conversations.
+- Why D is wrong: Perplexity measures how well a model predicts the next token and is useful during model training. However, low perplexity does not guarantee that responses are relevant, factually accurate, or helpful to end users. It is an intrinsic model metric, not a comprehensive output quality measure.
+- Why F is wrong: Training loss curves indicate model learning progress during training but do not reflect production output quality. A model can have low training loss yet still produce hallucinated, irrelevant, or inconsistent responses in production environments.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 26 — Sample Question</div>
+<div class="q-domain">Mixed (RAG at Scale)</div>
+<div class="q-text">A financial services company runs a production RAG system using Amazon Bedrock and OpenSearch Serverless. Users report intermittent slow responses and occasionally irrelevant answers, but the operations team lacks visibility into where failures occur. Which TWO monitoring strategies should the team implement to diagnose both latency and relevance issues? (Select TWO)</div>
+<ul class="q-options"><li class="correct">✓ Configure CloudWatch metrics to track end-to-end pipeline latency from query submission through FM response, including token consumption per request.</li>
+<li class="correct">✓ Track retrieval-stage metrics including vector search latency, relevance scores for top-k results, and semantic cache hit rates in OpenSearch.</li>
+<li>Monitor only FM invocation latency via Bedrock runtime metrics, since retrieval latency is negligible compared to generation time.</li>
+<li>Set up a single aggregate availability metric that alerts when the overall system error rate exceeds 5%.</li>
+<li>Log raw query text and full FM responses to S3 for weekly manual review by the content team.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why A is correct: End-to-end latency tracking captures the full user experience including retrieval, reranking, prompt assembly, and FM generation. Token consumption monitoring is critical because it directly impacts cost and can indicate issues like overly large context windows from poor chunking.
+- Why B is correct: Retrieval-stage metrics isolate search performance from generation performance. Relevance scores help detect embedding drift or stale indexes, while cache hit rates reveal optimization opportunities and can explain latency variance.
+- Why C is wrong: In production RAG systems, retrieval latency (especially with reranking) can be significant—sometimes exceeding FM invocation time. Ignoring retrieval metrics creates a blind spot for a major latency contributor.
+- Why D is wrong: A single aggregate metric cannot distinguish between retrieval failures, FM throttling, or relevance degradation. Diagnosing root causes requires component-level metrics, not just overall error rates.
+- Why E is wrong: Weekly manual review is too infrequent for production monitoring and does not provide real-time visibility. Logging full responses also raises data privacy concerns and storage costs without actionable operational insight.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 27 — Sample Question</div>
+<div class="q-domain">Mixed (Agents + Workflows)</div>
+<div class="q-text">A financial services company is building a customer-facing agent using Amazon Bedrock Agents. The agent must retrieve account balances from an internal API, query a knowledge base for product information, and execute fund transfers that require human approval. The agent must support multi-turn conversations with session persistence. Which architecture approach should the development team implement?</div>
+<ul class="q-options"><li>Create a single Lambda function that handles all three capabilities and connect it as one action group to the Bedrock Agent.</li>
+<li class="correct">✓ Define separate action groups for each capability — one Lambda-backed action group for the internal API, one connected to a Bedrock knowledge base, and one using return control to hand off fund transfers to the application for human approval.</li>
+<li>Use Amazon Bedrock batch inference to process all requests simultaneously and store results in Amazon S3 for the agent to retrieve.</li>
+<li>Implement the agent logic entirely in AWS Step Functions with direct API calls, bypassing Bedrock Agents.</li>
+<li>Create three independent Bedrock Agents — one per capability — and have the application orchestrate between them using custom routing logic.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why B is correct: Bedrock Agents support multiple action groups, each serving a distinct purpose. Connecting to a knowledge base is a native Bedrock Agent capability. Using return control for fund transfers allows the calling application to implement human approval before executing the transfer — this is the recommended pattern for sensitive operations. Separate action groups improve maintainability and help the FM reason about which capability to invoke.
+- Why A is wrong: Bundling all capabilities into a single Lambda and action group makes the agent's tool descriptions less clear, reducing the FM's ability to select the right action. It conflates knowledge base queries with API calls unnecessarily.
+- Why C is wrong: Batch inference is designed for offline processing of large datasets, not real-time conversational agent interactions.
+- Why D is wrong: Step Functions alone cannot perform the natural language reasoning needed to interpret user intent and select appropriate actions — that is the core value of Bedrock Agents.
+- Why E is wrong: Three separate agents add unnecessary complexity. Bedrock Agents natively support multiple action groups and knowledge bases within a single agent, which provides unified conversation context and simpler architecture.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 28 — Sample Question</div>
+<div class="q-domain">Mixed (Enterprise Integration)</div>
+<div class="q-text">A company runs a GenAI application using Amazon Bedrock for inference, AWS Lambda for orchestration, and Amazon DynamoDB for conversation history. The team needs to validate that model responses are correctly processed and stored before deploying updates to production. Which testing strategy should they implement?</div>
+<ul class="q-options"><li>Write unit tests that mock all Bedrock API calls and DynamoDB operations, then validate only the Lambda function's input/output transformation logic in isolation.</li>
+<li class="correct">✓ Use contract tests to validate the Bedrock API request/response schema. Run integration tests in a dedicated test environment with actual AWS service calls. Automate test execution in the CI/CD pipeline. Mock only external third-party services.</li>
+<li>Test exclusively in the production environment using a small percentage of live traffic to validate changes, with CloudWatch alarms to detect regressions.</li>
+<li>Build synthetic Bedrock response fixtures in a local development environment and validate the entire application flow without connecting to any AWS services.</li>
+<li>Rely on comprehensive CloudWatch alarms and X-Ray tracing in production to detect integration issues after deployment, using automated rollback if error rates exceed thresholds.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why correct: Contract tests validate that the application correctly structures Bedrock API calls and handles responses per the API specification, catching breaking changes early. Integration tests in a dedicated environment with actual AWS service calls validate the full request lifecycle including IAM permissions, VPC connectivity, and data persistence. CI/CD automation ensures tests run on every code change. Mocking only external third-party services (not the AWS services being integrated) provides realistic validation.
+- Why A is wrong: Unit tests with fully mocked AWS services miss critical integration issues like IAM permission errors, VPC endpoint misconfiguration, Bedrock response format changes, and DynamoDB throughput limits. They validate logic but not the integration surface.
+- Why C is wrong: Testing in production risks exposing users to bugs. For GenAI applications, incorrect or unvalidated model responses could degrade user experience before alarms detect the issue.
+- Why D is wrong: Local synthetic responses cannot validate IAM roles, VPC connectivity, Bedrock model availability, DynamoDB capacity, or actual API latency—all critical enterprise integration points.
+- Why E is wrong: Reactive monitoring catches issues only after they impact users. While essential for production, monitoring supplements pre-deployment testing—it does not replace it.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 29 — Sample Question</div>
+<div class="q-domain">Mixed (Cost/Perf/Observability)</div>
+<div class="q-text">A company needs to implement CloudWatch metrics strategy for GenAI. Which metrics strategy provides comprehensive visibility?</div>
+<ul class="q-options"><li>No derived metrics.</li>
+<li>Default metrics only without custom metrics.</li>
+<li>No log-based metrics.</li>
+<li class="correct">✓ Track custom metrics for GenAI operations. Use metric math for derived metrics. Implement composite alarms. Enable metric streams for real-time analysis. Create metric filters from logs. Monitor across dimensions.</li>
+<li>Single alarms without composite logic.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why correct: Custom metrics capture GenAI-specific data. Metric math derives insights. Composite alarms reduce noise. Metric streams enable real-time analysis. Log filters extract metrics. Dimensional monitoring provides granularity. This provides comprehensive metrics strategy.
+- Why B is wrong: Custom metrics capture application-specific data.
+- Why C is wrong: Derived metrics provide additional insights.
+- Why D is wrong: Composite alarms reduce alert fatigue.
+- Why E is wrong: Log-based metrics extract valuable data.</p></div>
+</details>
+</div>
+<div class="q-card">
+<div class="q-num">Quiz 30 — Sample Question</div>
+<div class="q-domain">Mixed Review (Domains 1–5)</div>
+<div class="q-text">A company runs a customer-facing GenAI chatbot on Amazon Bedrock with an OpenSearch Serverless vector store and DynamoDB for session management. The business requires an RTO of 15 minutes and an RPO of 1 hour. Which disaster recovery approach meets these requirements?</div>
+<ul class="q-options"><li>Deploy the application in a single Region with Amazon Bedrock on-demand throughput. Use S3 versioning for the knowledge base documents and take daily DynamoDB backups. If the Region fails, restore from backups in another Region.</li>
+<li class="correct">✓ Deploy the application in two Regions using Amazon Bedrock cross-region inference profiles. Use S3 cross-region replication for knowledge base data and DynamoDB global tables for session state. Route traffic through Route 53 with health-check failover.</li>
+<li>Deploy the application in a single Region with Bedrock Provisioned Throughput. Set up an AWS Backup plan with cross-Region copy rules for all resources. Maintain infrastructure-as-code templates to redeploy in a secondary Region if needed.</li>
+<li>Deploy the application in two Regions with independent Bedrock endpoints. Replicate the OpenSearch Serverless vector index manually on a weekly schedule. Use a Global Accelerator to route traffic to the healthy Region.</li>
+<li>Deploy the application in a single Region behind a multi-AZ Application Load Balancer. Use Auto Scaling for the Lambda functions and enable DynamoDB point-in-time recovery. Rely on Bedrock's built-in Regional redundancy for FM availability.</li>
+</ul>
+<details>
+<summary>Show Explanation</summary>
+<div class="q-explain"><p>- Why correct (B): An RTO of 15 minutes and RPO of 1 hour requires an active-active or warm-standby multi-Region architecture. Bedrock cross-region inference profiles allow the application to invoke models across Regions seamlessly. S3 cross-region replication keeps knowledge base documents synchronized with near-zero RPO. DynamoDB global tables provide multi-Region, active-active session state with single-digit-millisecond replication. Route 53 health-check failover automatically redirects traffic to the healthy Region within minutes, meeting the 15-minute RTO.
+- Why A is wrong: Restoring from daily backups in a new Region requires reprovisioning infrastructure and restoring data, which could take hours — far exceeding a 15-minute RTO and 1-hour RPO.
+- Why C is wrong: While AWS Backup with cross-Region copy provides data protection, redeploying an entire stack from IaC templates in a disaster scenario involves provisioning time that typically exceeds 15 minutes. This is a pilot-light strategy better suited for longer RTOs.
+- Why D is wrong: Manually replicating the vector index on a weekly schedule means up to 7 days of data loss, which violates the 1-hour RPO requirement.
+- Why E is wrong: Multi-AZ protects against a single Availability Zone failure, not a full Regional outage. This approach has no cross-Region capability, so a Regional failure would cause a complete outage with no defined RTO.</p></div>
+</details>
 </div>
 
-<div class="section">
-<h2>Career Impact</h2>
-<p>AWS certified professionals earn significantly higher salaries. This certification demonstrates your commitment to excellence and validates your skills to employers worldwide.</p>
-</div>
-
-<div class="section">
-<h2>Ready to Get Certified?</h2>
-<p>Join thousands who passed their AWS Generative AI Developer Professional exam with <a href="https://nestedcerts.com">NestedCerts</a>. Start with free practice questions and see why our platform has a 92% pass rate.</p>
-<a href="https://nestedcerts.com/certifications" class="cta">View All Certifications →</a>
+<div class="section" style="text-align:center;">
+<h2>Ready for the Full Question Bank?</h2>
+<p>You've seen 30 questions — there are 700+ more waiting for you on <a href="https://nestedcerts.com">NestedCerts</a>, plus full-length practice exams, performance analytics, and a structured 30-day study plan.</p>
+<a href="https://nestedcerts.com/pricing" class="cta">View Pricing →</a>
+<a href="https://nestedcerts.com/articles/generative-ai-developer-professional" class="cta cta-secondary">Read AIP-C01 Guide →</a>
 </div>
 
 <div class="footer">
-<p>© 2026 <a href="https://nestedcerts.com">NestedCerts</a> | <a href="https://nestedcerts.com/pricing">Pricing</a> | <a href="https://nestedcerts.com/help">Help</a> | <a href="https://nestedcerts.com/certifications">All Certs</a></p>
+<p>© 2026 <a href="https://nestedcerts.com">NestedCerts</a> | <a href="https://nestedcerts.com/pricing">Pricing</a> | <a href="https://nestedcerts.com/help">Help</a> | <a href="https://nestedcerts.com/certifications">All Certs</a> | <a href="https://nestedcerts.com/faq">FAQ</a></p>
 </div>
+
 </div>
 </body>
 </html>
